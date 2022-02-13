@@ -94,12 +94,6 @@ describe('utils.flatten(arr)', function(){
       .eql(['one', 'two', 'three', 'four', 'five'])
   })
   
-  it('test 1 should flatten an array', function(){
-    var arr = ['one', ['two', ['three', 'four'], 'five']];
-    should(utils.flatten(arr))
-      .eql(['one', 'two', 'three', 'four', 'five'])
-  })
-  
   it('test 2 should flatten an array', function(){
     var arr = ['one', ['two', ['three', 'four'], 'five']];
     should(utils.flatten(arr))
