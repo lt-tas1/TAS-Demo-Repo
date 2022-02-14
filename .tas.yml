@@ -1,5 +1,7 @@
 ---
-framework: mocha     
+framework: mocha  
+blocklist:
+  - "./test/utils.js##utils.etag(body, encoding)##should support strings"
 preRun:
   command:
     - npm install          
