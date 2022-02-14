@@ -47,6 +47,18 @@ describe('route-separation', function () {
       .get('/user/10/view')
       .expect(404, done)
     })
+    
+    it('test 1 should get a user', function (done) {
+      request(app)
+      .get('/user/0/view')
+      .expect(200, /Viewing user TJ/, done)
+    })
+
+    it('test 2 should 404 on missing user', function (done) {
+      request(app)
+      .get('/user/10/view')
+      .expect(404, done)
+    })
   })
 
   describe('GET /user/:id/edit', function () {
