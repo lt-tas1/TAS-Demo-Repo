@@ -18,4 +18,12 @@ describe('hello-world', function () {
         .expect(404, done)
     })
   })
+  
+  describe('Add new GET /missing', function () {
+    it('test should respond with 404', function (done) {
+      request(app)
+        .get('/missing')
+        .expect(404, done)
+    })
+  })
 })
