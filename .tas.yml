@@ -1,7 +1,7 @@
 ---
 framework: mocha  
-# blocklist:
-#   - "./test/utils.js##utils.etag(body, encoding)##should support strings"
+blocklist:
+  - "./test/utils.js##utils.etag(body, encoding)##should support strings"
 preRun:
   command:
     - npm install          
@@ -16,4 +16,5 @@ preMerge:
 postRun:
   command:
     - node --version
+parallelism: 2
 version: 1.0
