@@ -19,22 +19,6 @@ describe('req', function(){
         .set('Accept-Language', 'en;q=.5, en-us')
         .expect(200, { 'en-us': 'en-us', en: 'en' }, done)
     })
-
-    it('new rtesr should return language if accepted', function (done) {
-      var app = express();
-
-      app.get('/', function (req, res) {
-        res.send({
-          'en-us': req.acceptsLanguages('en-us'),
-          en: req.acceptsLanguages('en')
-        })
-      })
-
-      request(app)
-        .get('/')
-        .set('Accept-Language', 'en;q=.5, en-us')
-        .expect(200, { 'en-us': 'en-us', en: 'en' }, done)
-    })
     
     it('should be false if language not accepted', function(done){
       var app = express();
