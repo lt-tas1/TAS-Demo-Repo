@@ -43,6 +43,11 @@ describe('app', function(){
       var app = express();
       assert.throws(app.param.bind(app, ':name', 'bob'))
     })
+    
+    it('new should fail if not given fn', function(){
+      var app = express();
+      assert.throws(app.param.bind(app, ':name', 'bob'))
+    })
   })
 
   describe('.param(names, fn)', function(){
