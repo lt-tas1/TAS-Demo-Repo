@@ -50,6 +50,26 @@ describe('Router', function(){
     router.handle({ url: '', method: 'GET' }, {}, done);
   });
 
+  it('new 1 should handle blank URL', function(done){
+    var router = new Router();
+
+    router.use(function (req, res) {
+      throw new Error('should not be called')
+    });
+
+    router.handle({ url: '', method: 'GET' }, {}, done);
+  });
+
+  it('new 2 should handle blank URL', function(done){
+    var router = new Router();
+
+    router.use(function (req, res) {
+      throw new Error('should not be called')
+    });
+
+    router.handle({ url: '', method: 'GET' }, {}, done);
+  });
+
   it('should handle missing URL', function (done) {
     var router = new Router()
 
