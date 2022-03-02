@@ -29,6 +29,38 @@ describe('Route', function(){
       });
     })
 
+    it('new test should add handler', function(done){
+      var req = { method: 'GET', url: '/' };
+      var route = new Route('/foo');
+
+      route.all(function(req, res, next) {
+        req.called = true;
+        next();
+      });
+
+      route.dispatch(req, {}, function (err) {
+        if (err) return done(err);
+        should(req.called).be.ok()
+        done();
+      });
+    })
+    
+    it('new test should add handler', function(done){
+      var req = { method: 'GET', url: '/' };
+      var route = new Route('/foo');
+
+      route.all(function(req, res, next) {
+        req.called = true;
+        next();
+      });
+
+      route.dispatch(req, {}, function (err) {
+        if (err) return done(err);
+        should(req.called).be.ok()
+        done();
+      });
+    })
+    
     it('should handle VERBS', function(done) {
       var count = 0;
       var route = new Route('/foo');
