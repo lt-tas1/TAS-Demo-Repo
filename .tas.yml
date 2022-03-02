@@ -1,7 +1,7 @@
 ---
 framework: mocha  
-# blocklist:
-#   - "./test/utils.js##utils.etag(body, encoding)"
+blocklist:
+  - "./test/utils.js##utils.etag(body, encoding)"
 preRun:
   command:
     - npm install          
