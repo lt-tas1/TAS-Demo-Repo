@@ -87,6 +87,22 @@ describe('Route', function(){
         done();
       });
     })
+    
+     it('snew hould support .get', function(done){
+      var req = { method: 'GET', url: '/' };
+      var route = new Route('');
+
+      route.get(function(req, res, next) {
+        req.called = true;
+        next();
+      })
+
+      route.dispatch(req, {}, function (err) {
+        if (err) return done(err);
+        should(req.called).be.ok()
+        done();
+      });
+    })
 
     it('should limit to just .VERB', function(done){
       var req = { method: 'POST', url: '/' };
