@@ -32,21 +32,6 @@ describe('app', function(){
       .get('/blog')
       .expect('blog', done);
     })
-
-    it('new should mount the app', function(done){
-      var blog = express()
-        , app = express();
-
-      blog.get('/blog', function(req, res){
-        res.end('blog');
-      });
-
-      app.use(blog);
-
-      request(app)
-      .get('/blog')
-      .expect('blog', done);
-    })
     
     it('should support mount-points', function(done){
       var blog = express()
