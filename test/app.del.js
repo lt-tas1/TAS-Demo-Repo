@@ -14,4 +14,16 @@ describe('app.del()', function(){
     .del('/tobi')
     .expect('deleted tobi!', done);
   })
+  
+  it('new should alias app.delete()', function(done){
+    var app = express();
+
+    app.del('/tobi', function(req, res){
+      res.end('deleted tobi!');
+    });
+
+    request(app)
+    .del('/tobi')
+    .expect('deleted tobi!', done);
+  })
 })
