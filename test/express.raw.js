@@ -16,14 +16,6 @@ describe('express.raw()', function () {
       .send('the user is tobi')
       .expect(200, { buf: '746865207573657220697320746f6269' }, done)
   })
-
-  it('new should parse application/octet-stream', function (done) {
-    request(this.app)
-      .post('/')
-      .set('Content-Type', 'application/octet-stream')
-      .send('the user is tobi')
-      .expect(200, { buf: '746865207573657220697320746f6269' }, done)
-  })
   
   it('should 400 when invalid content-length', function (done) {
     var app = express()
