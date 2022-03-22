@@ -20,39 +20,6 @@ describe('app', function(){
       .get('/')
       .expect('HEY', done);
     })
-    
-    it('new should extend the response prototype', function(done){
-      var app = express();
-
-      app.response.shout = function(str){
-        this.send(str.toUpperCase());
-      };
-
-      app.use(function(req, res){
-        res.shout('hey');
-      });
-
-      request(app)
-      .get('/')
-      .expect('HEY', done);
-    })
-    
-    
-    it('newd should extend the response prototype', function(done){
-      var app = express();
-
-      app.response.shout = function(str){
-        this.send(str.toUpperCase());
-      };
-
-      app.use(function(req, res){
-        res.shout('hey');
-      });
-
-      request(app)
-      .get('/')
-      .expect('HEY', done);
-    })
 
     it('should only extend for the referenced app', function (done) {
       var app1 = express()
