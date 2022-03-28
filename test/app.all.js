@@ -20,23 +20,6 @@ describe('app.all()', function(){
       .get('/tobi')
       .expect(200, 'GET', cb)
   })
-
-  it('new should add a router per method', function(done){
-    var app = express();
-    var cb = after(2, done)
-
-    app.all('/tobi', function(req, res){
-      res.end(req.method);
-    });
-
-    request(app)
-      .put('/tobi')
-      .expect(200, 'PUT', cb)
-
-    request(app)
-      .get('/tobi')
-      .expect(200, 'GET', cb)
-  })
   
   it('should run the callback for a method just once', function(done){
     var app = express()
